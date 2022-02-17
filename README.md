@@ -1,6 +1,6 @@
-# curve-lib
+# curve-gdx
 
-[![](https://jitpack.io/v/KirboGames/curve-lib.svg)](https://jitpack.io/#KirboGames/curve-lib)
+[![](https://jitpack.io/v/KirboGames/curve-lib.svg)](https://jitpack.io/#JVMFrog/curve-gdx)
 
 curve-lib is a libgdx extension library :D
 
