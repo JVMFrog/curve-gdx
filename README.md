@@ -1,8 +1,12 @@
-# curve-lib
+<div align="center">
 
-[![](https://jitpack.io/v/KirboGames/curve-lib.svg)](https://jitpack.io/#KirboGames/curve-lib)
+# curve-gdx
 
-curve-lib is a libgdx extension library :D
+[![stability-beta](https://img.shields.io/badge/stability-beta-33bbff.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#beta)
+[![](https://jitpack.io/v/JVMFrog/curve-gdx.svg)](https://jitpack.io/#JVMFrog/curve-gdx)
+
+<h3>curve-gdx is a libgdx extension library :D</h2>
+</div>
 
 ## Gradle
 
@@ -27,4 +31,6 @@ dependencies {
 
 ## Examples
 
-You can find examples for curve-lib [here](https://github.com/KirboGames/curve-lib-examples)
+You can find examples for curve-gdx [here](https://github.com/KirboGames/curve-lib-examples)
+
+### [CONTRIBUTING.md](docs/CONTRIBUTING.md)
