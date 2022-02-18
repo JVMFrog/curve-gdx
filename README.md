@@ -31,6 +31,10 @@ dependencies {
 
 ## Examples
 
+<<<<<<< HEAD
 You can find examples for curve-gdx [here](https://github.com/KirboGames/curve-lib-examples)
 
 ### [CONTRIBUTING.md](docs/CONTRIBUTING.md)
+=======
+You can find examples for curve-lib [here](https://github.com/KirboGames/curve-lib-examples)
+>>>>>>> 5a03134e334c1e5651211c175b3ababbd33ab4b1
