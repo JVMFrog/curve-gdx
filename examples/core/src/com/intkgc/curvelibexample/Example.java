@@ -6,7 +6,9 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.intkgc.curve.CurveGDX;
 import com.intkgc.curve.config.Settings;
+import com.intkgc.curve.utils.FileDownloader;
 import com.intkgc.curvelibexample.registry.Items;
 import com.intkgc.curvelibexample.registry.SomeItem;
 import com.intkgc.curvelibexample.registry.SomeItem1;
@@ -27,6 +29,27 @@ public class Example extends ApplicationAdapter {
         Items.registry.register(new SomeItem());
         Items.registry.register(new SomeItem1());
         Items.registry.register(new SomeItem2());
+
+        CurveGDX.fileDownloader.download(
+                "https://github.com/JVMFrog/curve-gdx/raw/master/README.md",
+                Gdx.files.external("CurveGDXExamples/README.md"),
+                new FileDownloader.ProgressListener() {
+                    @Override
+                    public void update(int progress) {
+                        Gdx.app.log("FileDownloader", "File downloading: " + progress + "%");
+                    }
+
+                    @Override
+                    public void done() {
+                        Gdx.app.log("FileDownloader", "File downloaded");
+                    }
+
+                    @Override
+                    public void failed(Throwable throwable) {
+                        Gdx.app.error("Error", "failed", throwable);
+                    }
+                }
+        );
 
         batch = new SpriteBatch();
         img = new Texture("badlogic.jpg");

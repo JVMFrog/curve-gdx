@@ -8,51 +8,9 @@
 <h3>curve-gdx is a libgdx extension library :D</h2>
 </div>
 
-## Gradle
+## Setup
 
-Add it in your root build.gradle at the end of repositories:
-
-```groovy
-allprojects {
-    repositories {
-        //...
-        maven { url 'https://jitpack.io' }
-    }
-    ext {
-        //...
-        curvegdx = 'com.github.JVMFrog.curve-gdx'
-        curvegdxVersion = 'VERSION'
-    }
-}
-```
-
-Add the dependency to modules:
-
-```groovy
-//...
-project(":core") {
-    dependencies {
-        //...
-        implementation "$curvegdx:core:$curvegdxVersion"
-    }
-}
-//...
-project(":android") {
-    dependencies {
-        //...
-        implementation "$curvegdx:core:$curvegdxVersion"
-        implementation "$curvegdx:androidBackend:$curvegdxVersion"
-    }
-}
-//...
-project(":desktop") {
-    dependencies {
-        //...
-        implementation "$curvegdx:core:$curvegdxVersion"
-        implementation "$curvegdx:desktopBackend:$curvegdxVersion"
-    }
-}
-```
+**[Look here](https://github.com/JVMFrog/curve-gdx/wiki/Setup#gradle)**
 
 ## Usage
 
