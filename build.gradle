@@ -44,12 +44,20 @@ allprojects {
 
 project(':android-backend') {
     apply plugin: 'com.android.library'
+    dependencies {
+        implementation project(':core')
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+        implementation "androidx.appcompat:appcompat:1.4.1"
+    }
 }
 project(':desktop-backend') {
     apply plugin: 'java-library'
-
+    dependencies {
+        implementation project(':core')
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+    }
 }
-project(':curve') {
+project(':core') {
     apply plugin: 'java-library'
     apply plugin: 'org.jetbrains.kotlin.jvm'
 

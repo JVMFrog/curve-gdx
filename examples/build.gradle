@@ -47,6 +47,7 @@ project(":examples:desktop") {
 
     dependencies {
         implementation project(":examples:core")
+        implementation project(':core')
         implementation project(':desktop-backend')
         api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
@@ -60,6 +61,7 @@ project(":examples:android") {
 
     dependencies {
         implementation project(":examples:core")
+        implementation project(':core')
         implementation project(':android-backend')
         api "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
@@ -76,6 +78,6 @@ project(":examples:core") {
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation 'org.json:json:20211205'
-        implementation project(':curve')
+        implementation project(':core')
     }
 }

@@ -40,6 +40,7 @@ project(":core") {
 project(":android") {
     dependencies {
         //...
+        implementation "$curvegdx:core:$curvegdxVersion"
         implementation "$curvegdx:androidBackend:$curvegdxVersion"
     }
 }
@@ -47,9 +48,26 @@ project(":android") {
 project(":desktop") {
     dependencies {
         //...
+        implementation "$curvegdx:core:$curvegdxVersion"
         implementation "$curvegdx:desktopBackend:$curvegdxVersion"
     }
 }
+```
+
+## Usage
+
+First init `CurveGDX`
+
+In `DesktopLauncher` add this:
+
+```java
+CurveGDX.init(new DesktopBackend());
+```
+
+In `AndroidLauncher` add this:
+
+```java
+CurveGDX.init(new AndroidBackend());
 ```
 
 ## Examples
