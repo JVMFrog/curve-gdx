@@ -18,14 +18,37 @@ allprojects {
         //...
         maven { url 'https://jitpack.io' }
     }
+    ext {
+        //...
+        curvegdx = 'com.github.JVMFrog.curve-gdx'
+        curvegdxVersion = 'VERSION'
+    }
 }
 ```
 
-Add the dependency
+Add the dependency to modules:
 
 ```groovy
-dependencies {
-    implementation 'com.github.JVMFrog:curve-gdx:VERSION'
+//...
+project(":core") {
+    dependencies {
+        //...
+        implementation "$curvegdx:core:$curvegdxVersion"
+    }
+}
+//...
+project(":android") {
+    dependencies {
+        //...
+        implementation "$curvegdx:androidBackend:$curvegdxVersion"
+    }
+}
+//...
+project(":desktop") {
+    dependencies {
+        //...
+        implementation "$curvegdx:desktopBackend:$curvegdxVersion"
+    }
 }
 ```
 
