@@ -1,43 +1,66 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+    }
+}
 plugins {
     id 'java'
     id 'maven-publish'
     id 'org.jetbrains.kotlin.jvm' version '1.6.10'
 }
+
+allprojects {
+    version = '0.3-beta'
+    ext {
+        libVersion = version
+
+        gdxVersion = '1.10.0'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    }
+}
+
+
 sourceCompatibility = JavaVersion.VERSION_1_8
 java.targetCompatibility = JavaVersion.VERSION_1_8
-group = 'com.github.KirboGames'
-version '0.3-beta'
+group = 'com.github.JVMFrog'
+version "$libVersion"
 
 repositories {
     mavenCentral()
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.github.KirboGames'
-            artifactId = 'curve-lib'
-            version = '0.3-beta'
+project(':android-backend') {
+    apply plugin: "com.android.library"
+}
+project(':desktop-backend') {
+    apply plugin: "java-library"
 
-            from components.java
-        }
+}
+project(':core') {
+    apply plugin: "java-library"
+
+    dependencies {
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+        implementation 'org.json:json:20211205'
+        implementation 'org.reflections:reflections:0.10.2'
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
     }
 }
 
-task dist(type: Jar) {
-    dependsOn configurations.runtimeClasspath
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-    with jar
-}
-
-dependencies {
-    implementation "com.badlogicgames.gdx:gdx:1.10.0"
-    implementation 'org.json:json:20211205'
-    implementation 'org.reflections:reflections:0.10.2'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
-}
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"

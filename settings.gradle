@@ -1,1 +1,2 @@
 rootProject.name = 'curve-lib'
+include 'core', 'desktop-backend', 'android-backend'
