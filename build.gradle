@@ -49,7 +49,7 @@ project(':desktop-backend') {
     apply plugin: 'java-library'
 
 }
-project(':core') {
+project(':curve') {
     apply plugin: 'java-library'
     apply plugin: 'org.jetbrains.kotlin.jvm'
 

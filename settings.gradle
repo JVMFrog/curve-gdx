@@ -1,4 +1,4 @@
 rootProject.name = 'curve-gdx'
-include ':core'
+include ':curve'
 include ':desktop-backend'
 include ':android-backend'

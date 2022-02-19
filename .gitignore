@@ -3,6 +3,8 @@
 
 /.gradle/
 
-/core/build/
+/curve/build/
 /desktop-backend/build
 /android-backend/build
+
+local.properties
