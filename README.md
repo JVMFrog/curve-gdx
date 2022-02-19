@@ -10,23 +10,7 @@
 
 ## Setup
 
-**[Look here](https://github.com/JVMFrog/curve-gdx/wiki/Setup#gradle)**
-
-## Usage
-
-First init `CurveGDX`
-
-In `DesktopLauncher` add this:
-
-```java
-CurveGDX.init(new DesktopBackend());
-```
-
-In `AndroidLauncher` add this:
-
-```java
-CurveGDX.init(new AndroidBackend());
-```
+**[Look here](https://github.com/JVMFrog/curve-gdx/wiki/Setup)**
 
 ## Examples
 
