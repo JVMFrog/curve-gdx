@@ -31,6 +31,6 @@ dependencies {
 
 ## Examples
 
-You can find examples for curve-gdx [here](https://github.com/JVMFrog/curve-gdx-examples)
+You can find examples for curve-gdx [here](examples#readme)
 
 ### [CONTRIBUTING.md](docs/CONTRIBUTING.md)
