@@ -19,8 +19,7 @@ plugins {
 allprojects {
     version = '0.3-beta'
     ext {
-        githubID = 'com.github.JVMFrog'
-        libID = 'curve-lib'
+        groupID = 'com.github.JVMFrog.curve-lib'
 
         gdxVersion = '1.10.0'
     }
@@ -32,14 +31,20 @@ allprojects {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
-}
-
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-java.targetCompatibility = JavaVersion.VERSION_1_8
-
-repositories {
-    mavenCentral()
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
 }
 
 project(':android-backend') {
@@ -58,16 +63,5 @@ project(':core') {
         implementation 'org.json:json:20211205'
         implementation 'org.reflections:reflections:0.10.2'
         implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
-    }
-}
-
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
