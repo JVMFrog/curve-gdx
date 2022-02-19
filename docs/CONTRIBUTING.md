@@ -3,8 +3,8 @@
 ## Clone repository
 
 ```shell
-mkdir curve-lib-src
-cd curve-lib-src
+mkdir curve-gdx-src
+cd curve-gdx-src
 git clone https://github.com/JVMFrog/curve-gdx
 git clone https://github.com/JVMFrog/curve-gdx-examples
 ```

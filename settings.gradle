@@ -1,4 +1,4 @@
-rootProject.name = 'curve-lib'
+rootProject.name = 'curve-gdx'
 include ':core'
 include ':desktop-backend'
 include ':android-backend'
