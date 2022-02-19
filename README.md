@@ -31,6 +31,6 @@ dependencies {
 
 ## Examples
 
-You can find examples for curve-gdx [here](https://github.com/KirboGames/curve-lib-examples)
+You can find examples for curve-gdx [here](https://github.com/JVMFrog/curve-gdx-examples)
 
 ### [CONTRIBUTING.md](docs/CONTRIBUTING.md)

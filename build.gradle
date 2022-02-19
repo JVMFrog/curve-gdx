@@ -19,7 +19,8 @@ plugins {
 allprojects {
     version = '0.3-beta'
     ext {
-        libVersion = version
+        githubID = 'com.github.JVMFrog'
+        libID = 'curve-lib'
 
         gdxVersion = '1.10.0'
     }
@@ -36,22 +37,21 @@ allprojects {
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 java.targetCompatibility = JavaVersion.VERSION_1_8
-group = 'com.github.JVMFrog'
-version "$libVersion"
 
 repositories {
     mavenCentral()
 }
 
 project(':android-backend') {
-    apply plugin: "com.android.library"
+    apply plugin: 'com.android.library'
 }
 project(':desktop-backend') {
-    apply plugin: "java-library"
+    apply plugin: 'java-library'
 
 }
 project(':core') {
-    apply plugin: "java-library"
+    apply plugin: 'java-library'
+    apply plugin: 'org.jetbrains.kotlin.jvm'
 
     dependencies {
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"

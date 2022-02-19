@@ -1,6 +1,8 @@
 /.idea/
 /build/
+
 /.gradle/
+
+/core/build/
+/desktop-backend/build
 /android-backend/build
-/core/.gradle
-/desktop-backend/.gradle

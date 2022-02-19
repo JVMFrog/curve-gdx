@@ -24,6 +24,27 @@ android {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = "$githubID"
+                artifactId = "$libID"
+                version = rootProject.version
+            }
+
+            debug(MavenPublication) {
+                from components.debug
+
+                groupId = "$githubID"
+                artifactId = "$libID" + "-debug"
+                version = rootProject.version
+            }
+        }
+    }
+}
 dependencies {
 
 }
