@@ -8,6 +8,12 @@
 <h3>curve-gdx is a libgdx extension library :D</h2>
 </div>
 
+## Whu curve?
+
+Because initially there was an interface library, and it was curved:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OO_KRm_xUsQ/0.jpg)](https://www.youtube.com/watch?v=OO_KRm_xUsQ)
+
 ## Setup
 
 **[Look here](https://github.com/JVMFrog/curve-gdx/wiki/Setup)**
