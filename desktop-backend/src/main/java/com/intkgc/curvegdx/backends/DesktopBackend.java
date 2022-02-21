@@ -1,6 +1,7 @@
 package com.intkgc.curvegdx.backends;
 
 import com.intkgc.curve.backends.Backend;
+import com.intkgc.curve.input.Keyboard;
 import com.intkgc.curve.utils.APKFileOpener;
 import com.intkgc.curve.utils.FileDownloader;
 
@@ -19,5 +20,10 @@ public class DesktopBackend implements Backend {
     @Override
     public APKFileOpener apkOpener() {
         return null;
+    }
+
+    @Override
+    public Keyboard keyboard() {
+        return new DesktopKeyboard();
     }
 }

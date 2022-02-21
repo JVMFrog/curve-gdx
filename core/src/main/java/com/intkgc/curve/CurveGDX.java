@@ -1,10 +1,12 @@
 package com.intkgc.curve;
 
 import com.intkgc.curve.backends.Backend;
+import com.intkgc.curve.input.Keyboard;
 import com.intkgc.curve.utils.APKFileOpener;
 import com.intkgc.curve.utils.FileDownloader;
 
 public class CurveGDX {
+    public static Keyboard keyboard;
     public static FileDownloader fileDownloader;
     /**
      * Only for android
@@ -14,5 +16,6 @@ public class CurveGDX {
     public static void init(Backend backend) {
         fileDownloader = backend.fileDownloader();
         apkFileOpener = backend.apkOpener();
+        keyboard = backend.keyboard();
     }
 }

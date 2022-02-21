@@ -10,7 +10,7 @@
 
 ## Whu curve?
 
-Because initially there was an interface library, and it was curved:
+Because initially it was an interface library, and it was curved:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OO_KRm_xUsQ/0.jpg)](https://www.youtube.com/watch?v=OO_KRm_xUsQ)
 

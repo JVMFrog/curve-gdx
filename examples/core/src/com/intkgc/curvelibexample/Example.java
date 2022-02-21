@@ -6,6 +6,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.Timer;
 import com.intkgc.curve.CurveGDX;
 import com.intkgc.curve.config.Settings;
 import com.intkgc.curve.utils.FileDownloader;
@@ -53,11 +54,19 @@ public class Example extends ApplicationAdapter {
 
         batch = new SpriteBatch();
         img = new Texture("badlogic.jpg");
+
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                Gdx.app.postRunnable(() -> Gdx.input.setOnscreenKeyboardVisible(true));
+            }
+        }, 1000).run();
     }
 
     @Override
     public void render() {
         ScreenUtils.clear(1, 0, 0, 1);
+        Gdx.app.log("Keyboard size", String.valueOf(CurveGDX.keyboard.getKeyboardSize()));
         batch.begin();
         batch.draw(img, 0, 0);
         batch.end();
