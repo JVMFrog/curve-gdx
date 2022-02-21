@@ -5,6 +5,6 @@ include ':desktop-backend'
 include ':android-backend'
 
 include ':examples'
-include ":examples:core"
+include ':examples:examplecore'
 include ":examples:android"
 include ":examples:desktop"
