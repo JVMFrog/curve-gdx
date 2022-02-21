@@ -3,7 +3,7 @@
 
 /.gradle/
 
-/core/build/
+/examplecore/build/
 /desktop-backend/build
 /android-backend/build
 
