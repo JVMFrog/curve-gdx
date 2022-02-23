@@ -17,7 +17,7 @@ plugins {
 }
 
 allprojects {
-    version = '0.3-beta'
+    version = '0.4-beta'
     ext {
         groupID = 'com.github.JVMFrog.curve-gdx'
 
