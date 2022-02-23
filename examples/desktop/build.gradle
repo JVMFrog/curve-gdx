@@ -1,8 +1,8 @@
 sourceSets.main.java.srcDirs = [ "src/" ]
-sourceSets.main.resources.srcDirs = ["../core/assets"]
+sourceSets.main.resources.srcDirs = ["../android/assets"]
 
 project.ext.mainClassName = "com.intkgc.curvelibexample.desktop.DesktopLauncher"
-project.ext.assetsDir = new File("../core/assets")
+project.ext.assetsDir = new File("../android/assets")
 
 task run(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName

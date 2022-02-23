@@ -2,6 +2,6 @@
 /build/
 /.gradle/
 /desktop/build/
-/core/build/
+/examplecore/build/
 android/build/
 local.properties
