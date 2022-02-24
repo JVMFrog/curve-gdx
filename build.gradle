@@ -17,7 +17,7 @@ plugins {
 }
 
 allprojects {
-    version = '0.4.1-beta'
+    version = '0.4.2-beta'
     ext {
         groupID = 'com.github.JVMFrog.curve-gdx'
 
@@ -45,7 +45,7 @@ allprojects {
 project(':android-backend') {
     apply plugin: 'com.android.library'
     dependencies {
-        api project(':core')
+        implementation project(path: ':core')
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation "androidx.appcompat:appcompat:1.4.1"
     }
@@ -53,7 +53,7 @@ project(':android-backend') {
 project(':desktop-backend') {
     apply plugin: 'java-library'
     dependencies {
-        api project(':core')
+        implementation project(path: ':core')
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
