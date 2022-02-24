@@ -42,22 +42,22 @@ allprojects {
     }
 }
 
-project(':curve-gdx:android-backend') {
+project(':android-backend') {
     apply plugin: 'com.android.library'
     dependencies {
-        implementation project(':curve-gdx:core')
+        implementation project(':core')
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation "androidx.appcompat:appcompat:1.4.1"
     }
 }
-project(':curve-gdx:desktop-backend') {
+project(':desktop-backend') {
     apply plugin: 'java-library'
     dependencies {
-        implementation project(':curve-gdx:core')
+        implementation project(':core')
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
-project(':curve-gdx:core') {
+project(':core') {
     apply plugin: 'java-library'
     apply plugin: 'org.jetbrains.kotlin.jvm'
 
