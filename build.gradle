@@ -21,7 +21,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_11
 
 allprojects {
-    version = '0.5-beta'
+    version = '0.5.1-beta'
     ext {
         groupID = 'com.github.JVMFrog.curve-gdx'
 
@@ -42,20 +42,20 @@ allprojects {
     }
 }
 
-project(':android-backend') {
+project(':curve-gdx:android-backend') {
     apply plugin: 'com.android.library'
     dependencies {
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation "androidx.appcompat:appcompat:1.4.1"
     }
 }
-project(':desktop-backend') {
+project(':curve-gdx:desktop-backend') {
     apply plugin: 'java-library'
     dependencies {
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
-project(':core') {
+project(':curve-gdx:core') {
     apply plugin: 'java-library'
     apply plugin: 'org.jetbrains.kotlin.jvm'
 

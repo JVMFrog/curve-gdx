@@ -11,5 +11,5 @@ publishing {
 }
 
 dependencies {
-    implementation project(':core')
+    implementation project(':curve-gdx:core')
 }

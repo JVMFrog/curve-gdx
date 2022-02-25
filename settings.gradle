@@ -1,8 +1,8 @@
-rootProject.name = 'com.github.JVMFrog.curve-gdx'
+rootProject.name = 'curve-gdx'
 
-include ':core'
-include ':desktop-backend'
-include ':android-backend'
+include ':curve-gdx:core'
+include ':curve-gdx:desktop-backend'
+include ':curve-gdx:android-backend'
 
 include ':examples'
 include ':examples:examplecore'
