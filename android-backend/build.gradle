@@ -1,3 +1,18 @@
+afterEvaluate {
+    publishing {
+        publications {
+            androidBackend(MavenPublication) {
+                from components.release
+
+                groupId = "$groupID"
+                artifactId = name
+                version = rootProject.version
+            }
+        }
+    }
+}
+
+
 android {
     buildToolsVersion "31.0.0"
     compileSdkVersion 31
@@ -22,4 +37,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+dependencies {
+    implementation project(':core')
 }

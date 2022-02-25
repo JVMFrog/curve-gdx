@@ -45,7 +45,6 @@ allprojects {
 project(':android-backend') {
     apply plugin: 'com.android.library'
     dependencies {
-        implementation project(':core')
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation "androidx.appcompat:appcompat:1.4.1"
     }
@@ -53,7 +52,6 @@ project(':android-backend') {
 project(':desktop-backend') {
     apply plugin: 'java-library'
     dependencies {
-        implementation project(':core')
         implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
@@ -66,19 +64,5 @@ project(':core') {
         implementation 'org.json:json:20211205'
         implementation 'org.reflections:reflections:0.10.2'
         implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
-    }
-}
-
-subprojects {
-    afterEvaluate {
-        publishing {
-            publications {
-                maven(MavenPublication) {
-                    groupId "$groupID"
-                    artifactId project.name
-                    version rootProject.version
-                }
-            }
-        }
     }
 }
