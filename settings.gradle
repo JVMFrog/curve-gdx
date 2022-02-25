@@ -1,4 +1,4 @@
-rootProject.name = 'curve-gdx'
+rootProject.name = 'com.github.JVMFrog.curve-gdx'
 
 include ':core'
 include ':desktop-backend'
