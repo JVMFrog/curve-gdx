@@ -1,4 +1,4 @@
-rootProject.name = 'curve-gdx'
+rootProject.name = 'curve-gdx-src'
 
 include ':curve-gdx:core'
 include ':curve-gdx:desktop-backend'
