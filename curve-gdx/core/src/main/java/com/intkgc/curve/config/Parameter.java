@@ -16,6 +16,8 @@ import java.lang.annotation.Target;
 public @interface Parameter {
     /**
      * Json key
+     *
+     * @return jsonKey
      */
     String jsonKey();
 }

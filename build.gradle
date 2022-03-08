@@ -21,7 +21,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 allprojects {
-    version = '0.5.4-beta'
+    version = '0.5.5-beta'
     group = 'com.github.JVMFrog.curve-gdx'
     ext {
         groupID = 'com.github.JVMFrog.curve-gdx'
@@ -40,6 +40,10 @@ allprojects {
         kotlinOptions {
             jvmTarget = "1.8"
         }
+    }
+    java {
+        withSourcesJar()
+        withJavadocJar()
     }
 }
 
