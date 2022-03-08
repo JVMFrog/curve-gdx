@@ -8,7 +8,7 @@
 <h3>curve-gdx is a libgdx extension library :D</h2>
 </div>
 
-## Whu curve?
+## Why curve?
 
 Because initially it was an interface library, and it was curved:
 
