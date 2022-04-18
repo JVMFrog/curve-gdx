@@ -1,7 +1,7 @@
 package com.jvmfrog.curve.config;
 
 import com.badlogic.gdx.files.FileHandle;
-import org.json.JSONObject;
+import com.jvmfrog.curve.config.backends.Backends;
 
 import java.lang.reflect.Field;
 
@@ -15,23 +15,36 @@ import java.lang.reflect.Field;
  */
 public class Settings {
     /**
+     * Used backend. Default JSON Backend
+     */
+    private static SaveBackend backend = Backends.JSON_BACKEND;
+
+    /**
+     * Changes backend
+     */
+    public static void useBackend(SaveBackend backend) {
+        Settings.backend = backend;
+    }
+
+    /**
      * Saves all fields that have the {@linkplain Parameter @Parameter} annotation
      *
      * @param file          settings file
      * @param settingsClass class with parameters
      */
+
     public static void save(FileHandle file, Class<?> settingsClass) {
-        JSONObject settings = new JSONObject();
         for (Field field : settingsClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(Parameter.class)) {
                 try {
-                    settings.put(field.getAnnotation(Parameter.class).jsonKey(), field.get(null));
+                    Parameter parameter = field.getAnnotation(Parameter.class);
+                    backend.put(getKey(parameter, field), field.get(null));
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
         }
-        file.writeString(settings.toString(), false);
+        backend.save(file);
     }
 
     /**
@@ -41,18 +54,25 @@ public class Settings {
      * @param settingsClass class with parameters
      */
     public static void load(FileHandle file, Class<?> settingsClass) {
-        String result = file.readString();
-        JSONObject settings = new JSONObject(result);
+        backend.load(file);
         for (Field field : settingsClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(Parameter.class)) {
                 try {
-                    String jsonKey = field.getAnnotation(Parameter.class).jsonKey();
-                    if (settings.has(jsonKey))
-                        field.set(null, settings.get(jsonKey));
+                    Parameter parameter = field.getAnnotation(Parameter.class);
+                    String key = getKey(parameter, field);
+                    if (backend.has(key))
+                        field.set(null, backend.get(key));
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }
         }
+    }
+
+    /**
+     * @return field key
+     */
+    private static String getKey(Parameter parameter, Field field) {
+        return (parameter.value().isEmpty()) ? field.getName() : parameter.value();
     }
 }

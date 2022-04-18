@@ -15,9 +15,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface Parameter {
     /**
-     * Json key
-     *
-     * @return jsonKey
+     * @return key
      */
-    String jsonKey();
+    String value() default "";
 }
